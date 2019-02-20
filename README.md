@@ -1,2 +1,2 @@
-# alpha.com
+# Alpha
 Alpha Project
