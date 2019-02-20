@@ -1,0 +1,297 @@
+/*
+* Theme File for Rate My Business
+* Created by: Andrey Alda
+*/
+
+
+/* General */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+html{
+ height:100%;
+}
+body{
+	font-family: 'Raleway', sans-serif;
+	min-height:100%;
+}
+
+p.alternative-font-style{
+	font-family:'Lato', sans-serif;
+	font-size:18px;
+}
+
+/* 
+Insert fonts for all text types 
+EX: H1,H2,H3,H4,H5,H6,blockquote, etc... 
+*/
+
+body.alt{
+	background: #D3D3D3;
+
+}
+/* Header */
+header{
+	background:#2eabae;
+}
+
+header.alt{
+	background: #D3D3D3;
+	margin-bottom:10px;
+}
+
+header.alt .logo {
+    padding: 0;
+}
+
+header.alt .box-type{
+	margin-top:40px;
+	-webkit-border-top-left-radius: 30px;
+	-webkit-border-top-right-radius: 30px;
+	-moz-border-radius-topleft: 30px;
+	-moz-border-radius-topright: 30px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+/* Logo START */
+.logo{
+	padding:40px 0px 20px;
+}
+
+.logo img{
+	max-width:150px;
+	width:100%;
+	display:block;
+	margin:0 auto;
+}
+
+.logo h1{
+	font-size:30px;
+	color:#ffffff;
+}
+
+.logo a:hover{
+	text-decoration:none;
+}
+
+/* Logo END */
+
+.container-fluid {
+    padding: 0;
+}
+
+/* Navigation */
+
+nav{
+	background: #176383;
+	font-size: 
+}
+
+ul.main-navigation{
+	margin:0;
+	padding:20px 0 20px;
+	list-style-type:none;
+	float:right;
+}
+
+.main-navigation li > a{
+	color:#E9ECCF;
+}
+
+.main-navigation li{
+	margin-right:50px;
+	display:inline;
+}
+
+.main-navigation a{
+	font-size:24px;
+}
+
+/* Section Default */
+section {
+
+}
+section.alt {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+/* Homepage */
+
+.score-section {
+    width: 100%;
+    float: left;
+	margin-bottom:20px;
+}
+
+.ratings-star {
+	float:left;
+}
+.score {
+    color: #63b446;
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+}
+
+.company-name {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #176383;
+	margin-bottom:0px;
+}
+
+.date-founded {
+    font-size: 16px;
+    font-weight: bold;
+    color: #de4407;
+    margin-bottom: 20px;
+}
+
+.rate-btn {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #de4407;
+    font-weight: bold;
+}
+
+.rate-btn:hover {
+	text-decoration:none;
+}
+
+.company-desc {
+    font-size: 16px;
+    color: #636363;
+}
+
+.company-profile {
+    margin: 20px 20px 80px;
+    padding: 10px 10px 0px;
+    border-bottom: 1px solid #000;
+}
+
+
+/* Form - Registration */
+
+input {
+    width: 100%;
+    padding: 5px;
+	font-size:16px;
+}
+
+label {
+    font-size: 16px;
+    color: #000;
+    margin-top: 5px;
+	font-weight:bold;
+}
+
+.error-msg {
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+.error p {
+	text-align:center;
+}
+
+.error-msg p, .error p{
+	color:red;
+	font-size:16px;
+    margin-bottom: 0px;
+}
+
+div.login-button-group{
+	width:50%;
+}
+
+input[type="submit"],button {
+	font-size:18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background: #3399CC;
+    border: 0;
+    text-transform: uppercase;
+	max-width:200px;
+	width:100%;
+	float:right;
+	display:block;
+}
+
+input[type="submit"]:hover,button:hover {
+    background: #37FDFC;
+
+}
+/* Login Page*/
+.custom-login-icon {
+    color: #dad8d8 !important;
+    position: absolute;
+    right: 35px;
+    margin-top: 10px;
+}
+
+section .box-type{
+	padding: 40px 20px;
+	background:#ffffff;
+}
+
+label.check {
+    float: left;
+    display: inline-block;
+	font-weight:normal;
+}
+
+#remember {
+    display: inline;
+    float: left;
+    width: 20px;
+    margin: 10px 2px;
+}
+
+/* Reviews Page*/
+input[type="radio"] {
+    float: left;
+    width: 30px;
+    margin-top: 10px;
+}
+
+textarea#comment {
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+/* Footer */
+footer{
+	background: #000000;
+	color:#ffffff;
+    font-size: 12px;
+    font-weight: normal;
+	padding:10px 0;
+}
+
+
+footer.alt{
+	background: #D3D3D3;
+	color:#000000;
+	border-top:none;
+	margin:0;
+    padding: 0;
+}
+
+footer .container-fluid {
+    padding: 0 15px;
+}
+
+footer .footer-logo{
+	margin-bottom:20px;
+}
+	
+/* copyright */
+footer.alt .box-type .copyright{
+}
+.copyright {
+	line-height: 32px;
+	margin:0;
+}
