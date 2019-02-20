@@ -6,12 +6,9 @@
 
 /* General */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-html{
- height:100%;
-}
+
 body{
 	font-family: 'Raleway', sans-serif;
-	min-height:100%;
 }
 
 p.alternative-font-style{
@@ -28,9 +25,14 @@ body.alt{
 	background: #D3D3D3;
 
 }
-/* Header */
+/* Header  */
 header{
 	background:#2eabae;
+}
+
+header button {
+	margin-top:0;
+
 }
 
 header.alt{
@@ -53,11 +55,15 @@ header.alt .box-type{
 }
 
 /* Logo START */
+
+header .logo{
+	max-width:25px;
+	padding: 0;
+}
 .logo{
 	padding:40px 0px 20px;
 }
-
-.logo img{
+header.alt .logo img{
 	max-width:150px;
 	width:100%;
 	display:block;
@@ -105,6 +111,40 @@ ul.main-navigation{
 .main-navigation a{
 	font-size:24px;
 }
+/* Sidebar START*/
+.sidebar-toggled #sidebar-left {
+    width: 0;
+}
+#sidebar-left {
+	width:90px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+/* Sidebar END*/
+
+/*Content Section*/
+#wrapper {
+	
+}
+#wrapper #content-wrapper {
+	padding:0 0 80px;
+	width:100%;
+}
+
+.breadcrumb {
+    padding: 1rem;
+	margin: 1rem;
+}
+
+
 
 /* Section Default */
 section {
@@ -205,7 +245,7 @@ div.login-button-group{
 	width:50%;
 }
 
-input[type="submit"],button {
+.main-content input[type="submit"],.main-content button {
 	font-size:18px;
     font-weight: bold;
     padding: 10px 10px;
@@ -219,7 +259,7 @@ input[type="submit"],button {
 	display:block;
 }
 
-input[type="submit"]:hover,button:hover {
+.main-content input[type="submit"]:hover, .main-content button:hover {
     background: #37FDFC;
 
 }
@@ -268,7 +308,7 @@ footer{
 	color:#ffffff;
     font-size: 12px;
     font-weight: normal;
-	padding:10px 0;
+
 }
 
 
@@ -278,10 +318,6 @@ footer.alt{
 	border-top:none;
 	margin:0;
     padding: 0;
-}
-
-footer .container-fluid {
-    padding: 0 15px;
 }
 
 footer .footer-logo{
@@ -294,4 +330,17 @@ footer.alt .box-type .copyright{
 .copyright {
 	line-height: 32px;
 	margin:0;
+}
+
+@media (min-width: 768px) {
+	.sidebar-toggled #sidebar-left {
+		width: 90px !important;
+		max-width: 90px;
+	}
+	.sidebar-toggled #content-wrapper{
+		flex-basis:calc(100vw - 90px);
+		max-width:calc(100vw - 90px) !important;
+		width: calc(100vw - 90px) !important;
+	}
+
 }

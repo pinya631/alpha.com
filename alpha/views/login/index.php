@@ -1,4 +1,4 @@
-<section class='alt'>
+<section class='alt main-content'>
 	<div class="container">
 		<div class="row">
 					<div class="col-sm-10 col-md-6 col-lg-6 offset-sm-1 offset-md-3 offset-lg-3 box-type">
