@@ -34,8 +34,8 @@
 	<meta name="theme-color" content="#ffffff">
 
 </head>
-<body>
-	<header>
+<body id="page-top">
+
 		<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="<?php echo site_url(); ?>">
@@ -101,10 +101,7 @@
 		</ul>
 
 		</nav>
-	</header>
+
 	
 <!-- body content -->
 <div id="wrapper">
-	<div class="container-fluid">
-		<div class="row no-gutters flex-nowrap" >
-

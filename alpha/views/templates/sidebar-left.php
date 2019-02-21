@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-	<aside id="sidebar-left" class="col-md-2 col-xs-1">
+	<!--<aside id="sidebar-left" class="col-md-2 col-xs-1">-->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
@@ -34,4 +34,4 @@
           <span>Tables</span></a>
       </li>
     </ul>
-	</aside>
+	<!--</aside>-->

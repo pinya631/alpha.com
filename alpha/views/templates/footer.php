@@ -1,30 +1,27 @@
 
-      <!-- Sticky Footer 
-      <footer class="sticky-footer">
+ 
+    <!--  <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright © Your Website 2019</span>
           </div>
         </div>
       </footer> -->
-	<footer class="row no-gutters sticky-footer">
+	 <footer class="row no-gutters sticky-footer">
 				<div class="col-md-6 col-sm-6 col-xs-6">	
 					<p class="copyright text-left">Copyright 2019 </p>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">	
 					<p class="copyright text-right">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-				</div>
+				</div> 
 
 	</footer>
 
-	</section>
-	
+		</div>	
+	</div>
 	<a class="scroll-to-top rounded" href="#page-top">
 		<i class="fas fa-angle-up"></i>
 	</a>
-		</div>
-	</div>
-</div>
 
 	<script src="<?php echo base_url()."assets/js/jquery-3.3.1.min.js"; ?>"></script>
 	<script src="<?php echo base_url()."assets/vendor/bootstrap/js/bootstrap.bundle.min.js"; ?>"></script>
