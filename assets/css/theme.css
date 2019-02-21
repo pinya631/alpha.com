@@ -53,9 +53,12 @@ section.alt {
     top: 0.01rem;
     margin-left: 1.2rem;
 }
+/* Dashboard - Sidebar */
+li.nav-item.active, li.nav-item:hover {
+    background: #000;
+}
 
 /* Form - Registration */
-
 input {
     width: 100%;
     padding: 5px;
