@@ -1,4 +1,4 @@
 <?php
-$lang['dashboard'] = 'Dashboard';
-$lang['users'] = 'Users';
+$lang['dashboard'] = 'Russian Dashboard';
+$lang['users'] = 'Russian Users';
 ?>
