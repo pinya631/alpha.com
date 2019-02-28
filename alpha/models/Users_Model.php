@@ -64,20 +64,7 @@ class Users_Model extends CI_Model {
 			$this->db->update('alpha_users', $data);
 		}
 	}
-
-	/* Creates a record for the access of the new user   	
-	public function set_users_access($access_id = 0)
-	{
-		$this->load->helper('url');
-		$this->load->helper('string');		
-		$data = array(
-			'user_id' => $access_id,
-		);
-
-		return $this->db->insert('alpha_user_access', $data);
-	}*/
 	
-
 	/* Read login information */
 	public function read_login_information($email = NULL) {
 		

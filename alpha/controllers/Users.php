@@ -4,10 +4,11 @@ class Users extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url_helper');
-
-		// Load session library
-		$this->load->library('session');
+		
+		/* Removed/Commented URL helper and Session Library as it was globally loaded in autoload.php */
+		/* File Location: alpha/config/autoload.php */
+		/* $this->load->helper('url_helper'); */
+		/* $this->load->library('session');	*/	
 		
 		// Load form validation library
 		$this->load->helper('form');

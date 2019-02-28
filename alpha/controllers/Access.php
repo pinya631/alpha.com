@@ -6,32 +6,42 @@ class Access extends CI_Controller {
         public function __construct()
         {
 			parent::__construct();
-			$this->load->helper('url_helper');
-
-			// Load session library
-			$this->load->library('session');
 			
+			/* Removed/Commented URL helper and Session Library as it was globally loaded in autoload.php */
+			/* File Location: alpha/config/autoload.php */
+			/* $this->load->helper('url_helper'); */
+			/* $this->load->library('session');	*/	
+						
 			// Load form validation library
 			$this->load->helper('form');
 			$this->load->library('form_validation');
 
 			// Load database
 			$this->load->model('users_model');
+			
+			
+			// Load language helper
+			$this->lang->load('information','english');
         }
 
 		/* Home Page redirect if not logged in 				    */
 		/* Redirect to home page if registration is successful  */
 		public function index(){
 				
+				/*Check session if user is logged_in*/
 				if(!isset($_SESSION['logged_in'])){
 					return redirect('login');
 				}
+				
+				/* Return user information on dashboard */
 				$data['user_item'] = $this->users_model->get_users();
 				if (empty($data['user_item'])){
 					show_404();
 				}
 				$data['title'] = 'Home';
-	
+				/*Language Files Testing */
+				$data['dashboard'] = $this->lang->line('dashboard');
+				$data['user'] = $this->lang->line('users');
 				$this->load->view('templates/header', $data);
 				$this->load->view('templates/sidebar-left', $data);
 				$this->load->view('users/index', $data);
@@ -82,6 +92,7 @@ class Access extends CI_Controller {
 				
 				$username = $this->input->post('username',TRUE);
 				$password = $this->input->post('password',TRUE);
+				$language = $this->input->post('language',TRUE);
 
 				//var_dump(password_verify($this->input->post('password',TRUE),$data['user_info']['user_password']));
 				
@@ -90,8 +101,9 @@ class Access extends CI_Controller {
 					
 					$newdata = array(
 					'username'  => $this->input->post('username',TRUE),
-					'logged_in' => TRUE
-					);
+					'logged_in' => TRUE,
+					'site_lang'  => $language
+ 					);
 					
 					$this->session->set_userdata($newdata);	
 					if($this->users_model->check_role($username)){
@@ -111,7 +123,7 @@ class Access extends CI_Controller {
 			$data['title'] = 'Login';	
 
 				$this->load->view('templates/header-alt', $data);
-				$this->load->view('login/index', $data);				
+				$this->load->view('admin/login', $data);				
 				$this->load->view('templates/footer-alt');			
 		}
 
@@ -121,6 +133,7 @@ class Access extends CI_Controller {
 			// Removing session data
 			$sess_array = array('email' => '');
 			$this->session->unset_userdata('logged_in', $sess_array);
+			$this->session->unset_userdata('site_lang', $sess_array);
 			$data['message_display'] = 'Successfully Logout';
 			return redirect('login');
 		}		
