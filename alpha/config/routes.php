@@ -54,7 +54,7 @@ $route['default_controller'] = 'access/index';
 $route['dashboard/(:any)'] = 'access/view/$1';
 $route['login'] = 'access/login';
 $route['logout'] = 'access/logout';
-$route['register'] = 'users/register';
+$route['register'] = 'access/register';
 //$route['language/(:any)'] = 'languageswitcher/switchlang/$1';
 
 $route['404_override'] = '';
