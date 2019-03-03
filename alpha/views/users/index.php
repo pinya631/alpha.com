@@ -14,8 +14,11 @@
         <h1>Blank Page</h1>
         <hr>
         <p>This is a great starting point for new custom pages.</p>
-		
-		
+		<?php 
+		echo '<pre>'; 
+		print_r($this->session->all_userdata());
+		echo '<pre>';
+		?>
 
       </div>
       <!-- /.container-fluid -->

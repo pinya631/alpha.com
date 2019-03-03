@@ -9,7 +9,8 @@
 						</div>					
 					
 						<div class="row">
-							<div class="col-12">					
+							<div class="col-12">
+					
 								<div class="error"><p><?php (isset($err_msg) ? print $err_msg : "");  ?></p></div>
 								<?php echo form_open('login'); ?>
 

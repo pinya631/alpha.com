@@ -29,7 +29,7 @@ class Access extends CI_Controller {
 		public function index(){
 				
 				/*Check session if user is logged_in*/
-				if(!isset($_SESSION['logged_in'])){
+				if(!$this->session->has_userdata('logged_in')){
 					return redirect('login');
 				}
 				
@@ -192,9 +192,10 @@ class Access extends CI_Controller {
 		public function logout()
 		{
 			// Removing session data
-			$sess_array = array('email' => '');
+			$sess_array = array('username' => '');
 			$this->session->unset_userdata('logged_in', $sess_array);
 			$this->session->unset_userdata('site_lang', $sess_array);
+			$this->session->sess_destroy();
 			$data['message_display'] = 'Successfully Logout';
 			return redirect('login');
 		}		

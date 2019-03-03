@@ -71,17 +71,26 @@ class Users_Model extends CI_Model {
 		$query = $this->db->get_where('users', array('user_email' => $email));
 		return $query->row_array();	
 	}
-
+	
+	/* Validates the login of the user */
+	/* $username - username of the account */
+	/* $password - password of the account */	
 	public function check_login($username, $password){
 		$this->db->where('user_username',$username);
 		
 		$query = $this->db->get('alpha_users');
-
+		
+		/* Returns a record */
 		$record = $query->row();
-
-		$stored_password = $record->user_password;
-		if(password_verify($this->input->post('password',TRUE),$stored_password)){
-			return true;
+		
+		/* Checks for NULL values in record */
+		if($record != NULL){
+			$stored_password = $record->user_password;
+			if(password_verify($this->input->post('password',TRUE),$stored_password)){
+				return true;
+			}else{
+				return false;
+			}			
 		}else{
 			return false;
 		}
