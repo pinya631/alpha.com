@@ -49,7 +49,6 @@ class Access extends CI_Controller {
 		}
 
 		public function view($user_id = NULL ){
-				
 				if(!isset($_SESSION['logged_in'])){
 					return redirect('login');
 				}
@@ -93,8 +92,6 @@ class Access extends CI_Controller {
 				$username = $this->input->post('username',TRUE);
 				$password = $this->input->post('password',TRUE);
 				$language = $this->input->post('language',TRUE);
-
-				//var_dump(password_verify($this->input->post('password',TRUE),$data['user_info']['user_password']));
 				
 				/* verify the password and creates SESSION variables */
 				if($this->users_model->check_login($username,$password)){
