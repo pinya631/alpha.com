@@ -55,6 +55,11 @@ $route['dashboard/(:any)'] = 'access/view/$1';
 $route['login'] = 'access/login';
 $route['logout'] = 'access/logout';
 $route['register'] = 'access/register';
+$route['users'] = 'users/index';
+$route['users/create/(:any)'] = 'users/create/$1';
+$route['users/update/(:any)'] = 'users/update/$1';
+$route['users/delete/(:any)'] = 'users/delete/$1';
+
 //$route['language/(:any)'] = 'languageswitcher/switchlang/$1';
 
 $route['404_override'] = '';

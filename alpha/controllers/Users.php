@@ -20,30 +20,35 @@ class Users extends CI_Controller {
  
 	public function index(){
 		
-		$data['users'] = $this->users_model->get_users();
-		$data['title'] = 'Users Archive';
+		//$data['users'] = $this->users_model->get_users();
+		$data['title'] = 'Users';
 		 
+		$json_object = file_get_contents("https://alpha.com/api/users");
+		$data = json_decode($json_object);
+		//var_dump($data);
 		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar-left', $data);
 		$this->load->view('users/index', $data);
 		$this->load->view('templates/footer');
 	}
 
+	public function view($user_id = NULL ){
+			if(!$this->session->has_userdata('logged_in')){
+				return redirect('login');
+			}
+			$data['user'] = $this->users_model->get_user($user_id);
+			
+			if (empty($data['user'])){
+				//show_404();
+			}
+			$data['title'] = 'Users';
 
-	public function view($id = NULL)
-	{
-	$data['users_item'] = $this->users_model->get_users($id);
-	 
-	if (empty($data['users_item']))
-	{
-	show_404();
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/sidebar-left', $data);
+			$this->load->view('users/view', $data);
+			$this->load->view('templates/footer');		
 	}
-	 
-	$data['title'] = $data['users_item']['cib_user_fname'];
-	 
-	$this->load->view('templates/header', $data);
-	$this->load->view('users/view', $data);
-	$this->load->view('templates/footer');
-	}
+
 	
 	public function edit($id)
 	{
