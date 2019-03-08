@@ -19,7 +19,6 @@ class Access extends CI_Controller {
 			// Load database
 			$this->load->model('users_model');
 			
-			
 			// Load language helper
 			$this->lang->load('information','english');
         }
@@ -117,9 +116,7 @@ class Access extends CI_Controller {
 			/* Shows the login page */		
 			$data['title'] = 'Login';	
 
-				$this->load->view('templates/header-alt', $data);
 				$this->load->view('admin/login', $data);				
-				$this->load->view('templates/footer-alt');			
 		}
 		
  		/* Register function */
@@ -176,9 +173,7 @@ class Access extends CI_Controller {
 				 
 			}
 			else{
-					$this->load->view('templates/header-alt', $data);
-					$this->load->view('users/register');
-					$this->load->view('templates/footer-alt');
+					$this->load->view('admin/register',$data);
 
 			}
 		}

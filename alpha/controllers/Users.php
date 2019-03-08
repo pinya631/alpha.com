@@ -20,6 +20,11 @@ class Users extends CI_Controller {
  
 	public function index(){
 		
+		/*Check session if user is logged_in*/
+		if(!$this->session->has_userdata('logged_in')){
+			return redirect('login');
+		}
+		
 		//$data['users'] = $this->users_model->get_users();
 		$data['title'] = 'Users';
 		 

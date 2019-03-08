@@ -1,0 +1,102 @@
+Features:
+	-Google reCaptcha
+	-Password Strength
+	-Custom 404
+
+Moderator:
+	Roles:
+	-View User and Manager activities
+	-Update accounts
+	-Delete accounts
+	-imply suspension
+
+User
+	Roles:
+	-Update personal profile
+	-Review company
+
+Manager:
+	Roles:
+	-Register a company
+	-Review company
+	-Filter Reviews
+		
+Menu:
+
+Dashboard
+Profile
+Users
+Companies
+Reviews
+Developer Tools
+
+
+Users Table
+-------------------
+User ID 
+	Numeric
+	Auto Increment
+User First Name 
+	Alphabetical
+User Last Name 
+	Alphabetical
+User Email 
+	Email
+User Username
+	Alphanumeric
+User Password 
+	Min 8 Length Character
+	Alphanumeric
+User Date Created 
+	DateTime
+User Last Login
+	DateTime
+User Date Modified 
+	DateTime
+User Role 
+	Moderator
+	Manager
+	User = reviewer
+User Status 
+	0 = Active / True
+	1 = Inactive / False
+	
+Profiles Information Table
+--------------------------
+Prof ID
+Prof User ID
+Prof Address
+Prof Gender
+Prof Picture
+Prof Description
+Prof Birthday
+Prof Date Created
+Prof Date Modified
+
+Company Information Table (For Managers)
+----------------------------------------
+Comp ID
+Comp User ID
+Comp Name
+Comp Year Established
+Comp Industry
+Comp Description
+Comp Date Created
+Comp Last Modified
+Comp Logo
+Comp Status
+
+Reviews Table
+------------------------------
+Review ID
+Review Company ID
+Review User ID
+Review Ratings
+Review First Name
+Reviewer Last Name
+Review Comments
+Review Status
+
+
+Keys
+------------------------------

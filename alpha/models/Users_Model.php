@@ -13,27 +13,19 @@ class Users_Model extends CI_Model {
 	/* Return the user's database records */
 	/* Used by controller methods:        */
 	/* 1. index                           */
-	/*                                    */
-	public function get_users($username = FALSE){
+	public function get_users($username = NULL){
 		
-		if ($username === FALSE){
+		if($username === NULL){
 			$query = $this->db->get('alpha_users');
 			return $query->result_array();
 		}else{
+			$query = $this->db->get_where('alpha_users', array('user_username' => $username));
 			return $query->row_array();
+			
 		}
 	}
-	
-	/* get_user method returns a single row according to username */
-	public function get_user($id){
-		$query = $this->db->get_where('alpha_users', array('user_id' => $id));
-		return $query->row_array();
-	}
-	
-
 
 	/* Creates a record of the new user   */
-	
 	/* Insert the following information for
 	 * individual users.
 	 * Information include:
@@ -43,26 +35,42 @@ class Users_Model extends CI_Model {
 		-Username
 		-Password
 	*/
-	public function set_users($id = 0){
+	public function set_users(){
 
+		/* Set status to active(0) by default 					*/
+		/* Set role to User/Reviewer('User') by default			*/
+		/* Set password to a hashed string inserted to the db	*/	
+		$id = 0;
+		
+		if($this->input->post('id',TRUE) != NULL){
+			$id = $this->input->post('id',TRUE);
+		}
+		
 		$data = array(
+			'user_id' => $id,
 			'user_fname' => $this->input->post('firstname',TRUE),
 			'user_lname' => $this->input->post('lastname',TRUE),
 			'user_email' => $this->input->post('email',TRUE),
 			'user_username' => $this->input->post('username',TRUE),
 			'user_password' => password_hash($this->input->post('password',TRUE), PASSWORD_DEFAULT),
-			'user_role' => 'User'
-		);
+			'user_role' => 'User',
+			'user_status' => 0, 
+		);		
 		
-		
-		if ($id == 0) {
-			/* Creating new user data */
-			$this->db->insert('alpha_users', $data);
-		} else {
+		if ($data['user_id'] != 0) {
 			/* Updating new user data */
-			$this->db->where('user_id', $id);
-			$this->db->update('alpha_users', $data);
-		}
+			$this->db->where('user_id', $data['user_id'])->update('alpha_users', $data);
+			if($this->db->affected_rows() > 0){
+				return true;
+			}else{
+				return false;
+			}
+						
+		}else{
+			/* Creating new user data */
+			return $this->db->insert('alpha_users', $data);
+			
+		}					
 	}
 	
 	/* Read login information */
@@ -70,6 +78,10 @@ class Users_Model extends CI_Model {
 		
 		$query = $this->db->get_where('users', array('user_email' => $email));
 		return $query->row_array();	
+	}
+	
+	public function search_id(){
+		
 	}
 	
 	/* Validates the login of the user */

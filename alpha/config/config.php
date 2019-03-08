@@ -455,12 +455,12 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
 $config['csrf_protection'] = TRUE;
-$config['csrf_token_name'] = 'alpha_test';
-$config['csrf_cookie_name'] = 'alpha_live';
+$config['csrf_token_name'] = 'alpha_token';
+$config['csrf_cookie_name'] = 'alpha_cookie';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array();
-
+//$config['csrf_exclude_uris'] =
+$config['csrf_exclude_uris'] = array('usersapi/users');
 /*
 |--------------------------------------------------------------------------
 | Output Compression

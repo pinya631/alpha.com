@@ -19,7 +19,7 @@ require APPPATH . 'libraries/Format.php';
  * @license         MIT
  * @link            https://github.com/chriskacerguis/codeigniter-restserver
  */
-class API extends REST_Controller {
+class Example extends REST_Controller {
 
     function __construct()
     {
@@ -136,10 +136,5 @@ class API extends REST_Controller {
 
         $this->set_response($message, REST_Controller::HTTP_NO_CONTENT); // NO_CONTENT (204) being the HTTP response code
     }
-	
-	public function demo_get(){
-		$message = ['name' => 'Andrey', 'city' => 'Test'];
-		$this->set_response($message, REST_Controller::HTTP_OK);
-	}
 
 }
